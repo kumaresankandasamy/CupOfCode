@@ -1,3 +1,5 @@
+package CoC;
+
 public class AmodB {
     public static int mod(int a,int b){
         if(b<=0){
@@ -9,7 +11,7 @@ public class AmodB {
     }
     public static void main(String[] args) {
      System.out.println(mod(2,0));
-     System.out.println(mod(2,2));*|
+     System.out.println(mod(2,2));
         
     }
 }

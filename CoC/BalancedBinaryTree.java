@@ -1,6 +1,13 @@
 package interview;
+/**
+class Node {
+    Node left;
+    Node right;
+    int value;
+}
+**/
+public class BalancedBinaryTree extends Node{
 
-public class BalancedBinaryTree {
    public int sum(Node node){
    if(node == null){
        return  0;
