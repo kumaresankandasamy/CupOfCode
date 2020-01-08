@@ -1,0 +1,59 @@
+import java.io.*;
+import java.math.*;
+import java.text.*;
+import java.util.*;
+import java.util.regex.*;
+
+public class Solution {
+
+   
+    public static void main(String[] args) {
+        
+        final Scanner reader = new Scanner( System.in );
+        final int customers = reader.nextInt();
+        
+        final PriorityQueue<Customer> allCustomers = new PriorityQueue<>(customers, (c1, c2) -> c1.arrivalTime -
+                c2.arrivalTime);
+        final PriorityQueue<Customer> waitingList = new PriorityQueue<>(customers, (c1, c2) -> c1.cookingTime -
+                c2.cookingTime);
+        for (int i = 0; i < customers; i++) {
+            final Customer c = new Customer(reader.nextInt(), reader.nextInt());
+            allCustomers.add(c);
+        }
+
+        long totalTime = 0;
+        long waitingTime = 0;
+        while (!allCustomers.isEmpty() || !waitingList.isEmpty()) {
+            if (waitingList.isEmpty()) {
+                final Customer customer = allCustomers.poll();
+                waitingList.offer(customer);
+                totalTime = customer.arrivalTime;
+                continue;
+            }
+            final Customer customer = waitingList.poll();
+            totalTime += customer.cookingTime;
+            waitingTime += totalTime - customer.arrivalTime;
+
+            while (allCustomers.peek() != null && allCustomers.peek().arrivalTime <= totalTime) {
+                waitingList.offer(allCustomers.poll());
+            }
+        }
+        System.out.println((waitingTime / customers));
+    }
+
+    private static class Customer {
+
+        private final int arrivalTime;
+        private final int cookingTime;
+
+        public Customer(final int arrivalTime, final int cookingTime) {
+            this.arrivalTime = arrivalTime;
+            this.cookingTime = cookingTime;
+        }
+
+        @Override
+        public String toString() {
+            return "Customer{" + "arrivalTime=" + arrivalTime + ", cookingTime=" + cookingTime + '}';
+        }
+    }
+}
