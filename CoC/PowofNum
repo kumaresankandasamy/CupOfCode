@@ -1,0 +1,11 @@
+public class PowerOfNumber{
+public static void main(String[] args){
+int x=2;n=2;
+long res=1;
+int i = n;
+for(;i!=0;--i){
+res = res * x;
+}
+System.out.println(x+"^"+n+"="+res);
+}
+}
