@@ -1,0 +1,27 @@
+// Setup
+var myObj = {
+  gift: "pony",
+  pet: "kitten",
+  bed: "sleigh"
+};
+
+function checkObj(checkProp) {
+  // Your Code Here
+  switch(checkProp){
+    case "gift":
+    return "pony";
+    break;
+    case "pet":
+    return "kitten";
+    break;
+    case "bed":
+    return "sleigh";
+    break;
+    default:
+    return "Not Found";
+  }
+  return "Change Me!";
+}
+
+// Test your code by modifying these values
+checkObj("gift");
