@@ -1,0 +1,1 @@
+let yourArray = ['name',1,true,"role",undefined]; // change this line

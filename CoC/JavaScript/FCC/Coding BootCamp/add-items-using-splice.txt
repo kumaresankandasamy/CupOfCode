@@ -1,0 +1,11 @@
+function htmlColorNames(arr) {
+  // change code below this line
+  let index = [0,1];
+  const amountToDelete = 2;
+  arr.splice(index,amountToDelete,'DarkSalmon','BlanchedAlmond');
+  // change code above this line
+  return arr;
+}
+
+// do not change code below this line
+console.log(htmlColorNames(['DarkGoldenRod', 'WhiteSmoke', 'LavenderBlush', 'PaleTurqoise', 'FireBrick']));
