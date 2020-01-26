@@ -1,0 +1,48 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static void main(String[] args) {
+
+    Scanner inp = new Scanner(System.in);
+    int n = inp.nextInt();
+    Stack<Integer> S = new Stack<>();
+    Stack<Integer> largest_stack = new Stack<>();
+    largest_stack.push(0);
+
+    for(int i=1; i<=n;i++){
+        int query = inp.nextInt();
+
+        if(query==1){
+            int newtop=inp.nextInt();
+            S.push(newtop);
+
+            if(S.peek()>=largest_stack.peek()){
+                largest_stack.push(S.peek());     
+            }
+
+
+       }
+
+        if(query==2){
+            if(S.peek()==largest_stack.peek()){
+                largest_stack.pop();   
+            }
+
+            S.pop();   
+        }
+
+
+
+        if(query==3){
+            System.out.println(largest_stack.peek());
+        }
+
+
+}
+}
+}
+
