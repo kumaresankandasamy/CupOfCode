@@ -1,0 +1,12 @@
+function rev(str, n){
+  let str1 = [];
+  for(let i=0; i< str.length;i+=n){
+  str1.push(str.slice(i,i+n))
+  }
+  console.log(str1.map((x) => x.split('')
+                                .reverse()
+                                .join(''))
+                                .join(''))
+}
+rev("kumaresan", 3);
+
