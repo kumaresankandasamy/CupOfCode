@@ -1,0 +1,12 @@
+var array = [1,2,3,4,5];
+undefined
+var arr = array.map(x => x*3);
+undefined
+console.log(arr);
+VM259:1 (5) [3, 6, 9, 12, 15]
+undefined
+var arr2 = array.map(x=>x*5);
+undefined
+console.log(arr2);
+VM394:1 (5) [5, 10, 15, 20, 25]
+undefined
