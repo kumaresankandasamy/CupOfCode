@@ -1,0 +1,14 @@
+function bouncer(arr) {
+  // Don't show a false ID to this bouncer.
+  
+ // return arr.filter(Boolean);
+ let emp = [];
+ for(let i=0;i<arr.length;i++){
+   if(arr[i]){
+    emp.push(arr[i]);
+   }
+ }
+ return emp;
+}
+
+bouncer([7, "ate", "", false, 9]);
