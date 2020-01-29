@@ -1,0 +1,8 @@
+function confirmEnding(str, target) {
+  
+//return str.slice(str.length - target.length) === target;
+ let r  = new RegExp(target + "$","i");
+ return r.test(str);
+}
+
+confirmEnding("Congratulation", "on");

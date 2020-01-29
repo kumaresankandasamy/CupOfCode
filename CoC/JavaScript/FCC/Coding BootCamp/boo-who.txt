@@ -1,0 +1,7 @@
+function booWho(bool) {
+  // What is the new fad diet for ghost developers? The Boolean.
+ var x = new Boolean();
+  return typeof bool == "boolean";
+}
+
+booWho(null);
