@@ -1,0 +1,9 @@
+/* jshint expr: true */
+
+function House(numBedrooms) {
+  this.numBedrooms = numBedrooms;
+}
+let myHouse = new House(10);
+myHouse instanceof House;
+
+// Add your code below this line
