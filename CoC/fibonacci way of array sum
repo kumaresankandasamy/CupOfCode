@@ -1,0 +1,14 @@
+const sort = array => {
+  let elements = array;
+  let newArray = elements;
+
+  for (let i = 0; i < array.length+1; i++) {
+    let [first, second] = newArray;
+    let sumTwoFirstElements = first + second;
+
+    newArray.splice(0, 2);
+    newArray = [sumTwoFirstElements, ...newArray];
+    console.log(newArray);
+  }
+};
+sort([0, 1, 1, 2, 3, 5, 8]);
