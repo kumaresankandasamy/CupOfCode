@@ -1,0 +1,85 @@
+function smallestCommons(arr) {
+   
+  var primeSeq = [1, 2, 3, 5, 7, 11, 13, 17, 19, 23];
+  var sequence = [];
+  var subArray=[];
+  var masterArr =[];
+  var testArr = [];
+ 
+  //sorting from small to large
+  arr.sort(function(a,b){
+    return a-b;
+  });
+  //entire sequence
+  for (var c=arr[0];c<=arr[1];c++){
+      sequence.push(c);
+  }
+   
+  //creating subarray
+  for(var i=0;i<(arr[1]-arr[0])+1;i++){
+    subArray[i]=[];
+  }
+  
+  sequence.forEach(function(element,index,array){
+    for(var j=0;j<=primeSeq.length;j++) {
+      if (element % primeSeq[j]===0) {
+        subArray[index].push(primeSeq[j]);
+        element = element / primeSeq[j];
+        j=0;            
+      }      
+    }    
+  });
+    
+  // to create masterArr
+  for(var n=0;n<primeSeq.length;n++){
+    masterArr[n]=[];
+  }
+  // var o is the number of sub arrays under masterArr
+    
+  for(var o=1;o<primeSeq.length;o++) {
+    subArray.forEach(filterThis);
+  }
+  
+  //to compare against the [o]th index of subArray
+  
+  function testFunc(element,index,array) {
+   if (element === primeSeq[o]) {
+      return element;
+    }
+  }
+  
+  //to push the [o]th element to the masterArr
+    
+  function filterThis(element,index,array) {
+    masterArr[o].push(element.filter(testFunc));
+  }
+  
+   //to preserve longest length and eliminate everything else 
+  
+  function sortArr(a,b){
+    return  (b.length) - (a.length);
+  }
+    
+  for (var p =0;p<masterArr.length;p++){
+    for (var q=0;q<masterArr[p].length;q++){
+     masterArr[p].sort(sortArr);
+     testArr[p]=(masterArr[p][0]);    
+   }
+  }
+  
+ var multiple=1;
+   
+ testArr.forEach(function(element){
+   element.forEach(function(element,index,array){
+     if(element>1) {
+       multiple*=element;
+     }
+   });
+ });
+  
+ return multiple;
+  
+}
+
+
+smallestCommons([1,13]);
