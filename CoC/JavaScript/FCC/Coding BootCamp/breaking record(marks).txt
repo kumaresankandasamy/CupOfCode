@@ -1,0 +1,20 @@
+function breakingRecords(scores) {
+    var initMin = scores[0]
+    var initMax = scores[0]
+    var countMin = 0
+    var countMax = 0
+    for( var i = 0; i < scores.length; i++){
+        if( scores[i] < initMin){
+            initMin = scores[i]
+            countMin += 1
+        }
+        else {
+            if ( scores[i] > initMax){
+                initMax = scores[i]
+                countMax += 1
+            }
+        }
+    }
+    return [countMax, countMin]
+
+}
