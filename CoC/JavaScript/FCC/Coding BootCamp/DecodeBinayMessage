@@ -1,0 +1,7 @@
+var mes = "01010100 01101000 01100001 01110100 00100111 01110011 00100000 01110011 01101111 00100000 01100011 01101111 01101111 01101100";
+var res = mes.split(' ')
+             .map(x=>parseInt(x,2))
+             .map(num=>String.fromCharCode(num))
+             .join('')
+
+console.log(res);
