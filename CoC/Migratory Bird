@@ -1,0 +1,51 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.function.*;
+import java.util.regex.*;
+import java.util.stream.*;
+import static java.util.stream.Collectors.joining;
+import static java.util.stream.Collectors.toList;
+
+public class Solution {
+
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] arr = new int[5];
+        for(int i = 0;i<n;i++){
+            switch (sc.nextInt()){
+            case 1 :
+                arr[0]++;
+                break;
+            case 2 :
+                arr[1]++;
+                break;
+            case 3 :
+                arr[2]++;
+                break;
+            case 4 :
+                arr[3]++;
+                break;
+            case 5 :
+                arr[4]++;
+                break;
+            }
+        }
+        int highest = 0;
+        int ans = 0;
+        for(int i = 0;i<arr.length;i++){
+            if(arr[i]>highest){
+                highest = arr[i];
+                ans= i+1;
+            }
+        }
+        System.out.println(ans);
+    }
+
+    }
+
+    
