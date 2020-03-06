@@ -1,34 +1,69 @@
 import java.io.*;
-import java.util.*;
-import java.text.*;
 import java.math.*;
+import java.text.*;
+import java.util.*;
 import java.util.regex.*;
 
 public class Solution {
 
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        int s = in.nextInt();
-        int n = in.nextInt();
-        int m = in.nextInt();
-        int keyboards[] = new int[n];
-        int drives[] = new int[m];
-        for(int i=0; i < n; i++){
-            keyboards[i] = in.nextInt();
+    static int getMoneySpent(int[] keyboards, int[] drives, int budget) {
+        int max = -1;
+
+        for (int i = 0; i < keyboards.length; i++) {
+            for (int j = 0; j < drives.length; j++) {
+                if (keyboards[i] + drives[j] <= budget && keyboards[i] + drives[j] > max)
+                    max = keyboards[i] + drives[j];
+            }
         }
-        for(int i=0; i < m; i++){
-            drives[i] = in.nextInt();
+        return max;
+    }
+
+    
+    private static final Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) throws IOException {
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        String[] bnm = scanner.nextLine().split(" ");
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])*");
+
+        int b = Integer.parseInt(bnm[0]);
+
+        int n = Integer.parseInt(bnm[1]);
+
+        int m = Integer.parseInt(bnm[2]);
+
+        int[] keyboards = new int[n];
+
+        String[] keyboardsItems = scanner.nextLine().split(" ");
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])*");
+
+        for (int keyboardsItr = 0; keyboardsItr < n; keyboardsItr++) {
+            int keyboardsItem = Integer.parseInt(keyboardsItems[keyboardsItr]);
+            keyboards[keyboardsItr] = keyboardsItem;
         }
-        int max = keyboards[0]+drives[0];
-        for(int i=0; i<n; i++){
-            for(int j=0; j<m; j++){
-                if(keyboards[i]+drives[j]>max && keyboards[i]+drives[j]<=s)
-                    max=keyboards[i]+drives[j];
-            }    
+
+        int[] drives = new int[m];
+
+        String[] drivesItems = scanner.nextLine().split(" ");
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])*");
+
+        for (int drivesItr = 0; drivesItr < m; drivesItr++) {
+            int drivesItem = Integer.parseInt(drivesItems[drivesItr]);
+            drives[drivesItr] = drivesItem;
         }
-        if(s>=max)
-            System.out.println(max);
-        else
-            System.out.println("-1");
+
+        /*
+         * The maximum amount of money she can spend on a keyboard and USB drive, or -1 if she can't purchase both items
+         */
+
+        int moneySpent = getMoneySpent(keyboards, drives, b);
+
+        bufferedWriter.write(String.valueOf(moneySpent));
+        bufferedWriter.newLine();
+
+        bufferedWriter.close();
+
+        scanner.close();
     }
 }
