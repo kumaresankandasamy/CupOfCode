@@ -4,15 +4,16 @@ import java.text.*;
 import java.math.*;
 import java.util.regex.*;
 
-public class Solution {
+public class Solution {    
 
-public static void main(String[] args) {
-
-    Regex_Test tester = new Regex_Test();
-    tester.checker("^(Mr|Mrs|Ms|Dr|Er)\\.[a-zA-z]+$"); 
-
+    public static void main(String[] args) {
+        
+        Regex_Test tester = new Regex_Test();
+        tester.checker("^(Mr\\.|Mrs\\.|Ms\\.|Dr\\.|Er\\.)[a-zA-Z]+$");  
+    
+    }
 }
-}
+
 class Regex_Test {
 
     public void checker(String Regex_Pattern){
