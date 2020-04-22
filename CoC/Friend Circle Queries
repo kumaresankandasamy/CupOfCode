@@ -51,7 +51,7 @@ public class Solution {
         }
     }
 
-    // Complete the maxCircle function below.
+    
     static int[] maxCircle(int[][] queries) {
         UnionFind uf = new UnionFind();
         int[] res = new int[queries.length];
