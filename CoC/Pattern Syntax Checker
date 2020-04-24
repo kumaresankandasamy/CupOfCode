@@ -2,9 +2,6 @@ import java.util.Scanner;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
 
-/* If a PatternSyntaxException is not thrown by Pattern.compile,
-   then the regular expression is valid.
-*/
 public class Solution {
     public static void main(String[] args){
         Scanner scan = new Scanner(System.in);
