@@ -24,7 +24,6 @@ function readLine() {
     return inputString[currentLine++];
 }
 
-// Complete the breakingRecords function below.
 function breakingRecords(scores) {
 let best = scores[0];
 let worst = scores[0];
