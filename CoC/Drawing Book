@@ -6,9 +6,7 @@ import java.util.regex.*;
 
 public class Solution {
 
-    /*
-     * Complete the pageCount function below.
-     */
+    
     static int pageCount(int n, int p) {
         int totalPageFront = n/2;
         int targetPageFront = p/2;
