@@ -15,5 +15,5 @@ var result = arr.join('');
 return result;
 }
 
-// Change the inputs below to test
+// test
 rot13("SERR PBQR PNZC");
