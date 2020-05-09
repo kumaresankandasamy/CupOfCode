@@ -24,7 +24,6 @@ function readLine() {
     return inputString[currentLine++];
 }
 
-// Complete the birthdayCakeCandles function below.
 function birthdayCakeCandles(ar) {
 let max = Math.max(...ar);
 let filterArr = ar.filter(function(value,index,ar){
