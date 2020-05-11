@@ -6,7 +6,6 @@ function smallestCommons(arr) {
   var masterArr =[];
   var testArr = [];
  
-  //sorting from small to large
   arr.sort(function(a,b){
     return a-b;
   });
