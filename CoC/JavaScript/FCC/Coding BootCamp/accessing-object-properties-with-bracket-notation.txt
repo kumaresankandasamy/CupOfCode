@@ -1,4 +1,3 @@
-// Setup
 var testObj = {
   "an entree": "hamburger",
   "my side": "veggies",
