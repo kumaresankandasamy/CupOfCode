@@ -9,7 +9,7 @@ function smallestCommons(arr) {
   arr.sort(function(a,b){
     return a-b;
   });
-  //entire sequence
+  
   for (var c=arr[0];c<=arr[1];c++){
       sequence.push(c);
   }
